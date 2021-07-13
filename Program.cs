@@ -15,14 +15,6 @@ namespace ConsoleHostedService
 				{
 					// Add any 3rd party loggers like NLog or Serilog
 				})
-				.ConfigureAppConfiguration((hostContext, config) =>
-				{
-					// Add User Secrets for local development
-					if (hostContext.HostingEnvironment.IsDevelopment())
-					{
-						config.AddUserSecrets(typeof(Program).Assembly);
-					}
-				})
 				.ConfigureServices((hostContext, services) =>
 				{
 					// Add the console hosted service
